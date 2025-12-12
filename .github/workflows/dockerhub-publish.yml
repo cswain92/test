@@ -2,7 +2,7 @@ name: Build and push to Docker Hub
 
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   workflow_dispatch:
 
 
@@ -32,5 +32,6 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          platforms: linux/amd64,linux/arm64
           tags: chiranjib1992/buildbygithubactions:latest, chiranjib1992/buildbygithubactions:${{ github.sha }}
           # optionally platforms: linux/amd64,linux/arm64
